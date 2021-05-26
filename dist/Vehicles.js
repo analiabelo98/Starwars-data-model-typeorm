@@ -24,41 +24,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 exports.__esModule = true;
-exports.User = void 0;
+exports.Vehicles = void 0;
 var typeorm_1 = require("typeorm");
 var Favs_1 = require("./Favs");
-var User = /** @class */ (function (_super) {
-    __extends(User, _super);
-    function User() {
+var Vehicles = /** @class */ (function (_super) {
+    __extends(Vehicles, _super);
+    function Vehicles() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     __decorate([
         typeorm_1.PrimaryGeneratedColumn(),
         __metadata("design:type", Number)
-    ], User.prototype, "id");
+    ], Vehicles.prototype, "id");
     __decorate([
         typeorm_1.Column(),
         __metadata("design:type", String)
-    ], User.prototype, "first_name");
+    ], Vehicles.prototype, "name");
     __decorate([
         typeorm_1.Column(),
         __metadata("design:type", String)
-    ], User.prototype, "last_name");
+    ], Vehicles.prototype, "description");
     __decorate([
-        typeorm_1.Column({ unique: true }),
+        typeorm_1.Column(),
         __metadata("design:type", String)
-    ], User.prototype, "email");
+    ], Vehicles.prototype, "model");
     __decorate([
-        typeorm_1.Column({ unique: true }),
-        __metadata("design:type", String)
-    ], User.prototype, "password");
+        typeorm_1.Column(),
+        __metadata("design:type", Number)
+    ], Vehicles.prototype, "cost");
     __decorate([
-        typeorm_1.OneToMany(function () { return Favs_1.Favs; }, function (favs) { return favs.user; }),
+        typeorm_1.OneToMany(function () { return Favs_1.Favs; }, function (favs) { return favs.vehicles; }),
         __metadata("design:type", Array)
-    ], User.prototype, "favs");
-    User = __decorate([
+    ], Vehicles.prototype, "vehicles");
+    Vehicles = __decorate([
         typeorm_1.Entity()
-    ], User);
-    return User;
+    ], Vehicles);
+    return Vehicles;
 }(typeorm_1.BaseEntity));
-exports.User = User;
+exports.Vehicles = Vehicles;
